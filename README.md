@@ -18,7 +18,7 @@ git clone https://github.com/madzharov/ministra-install-ubuntu-20.04.git
 cd ministra-install-ubuntu-20.04/
 ```
 
-Open minister_install_ubuntu.20.04.sh with your favorite text editor and change to line 17
+Open minister_install_ubuntu.20.04.sh with your favorite text editor and change on line 17
 ```bas
 mysql_root_pass="test123456"
 ```
