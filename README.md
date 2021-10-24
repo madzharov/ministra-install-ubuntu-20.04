@@ -14,7 +14,7 @@ Ministra auto install script
 ## Installation
 ```bash
 apt-get install git
-git clone https://github.com/madzharov/ministra-install-ubuntu-20.04
+git clone https://github.com/madzharov/ministra-install-ubuntu-20.04.git
 cd ministra-install-ubuntu-20.04/
 ```
 
