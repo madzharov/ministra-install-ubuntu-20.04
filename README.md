@@ -37,11 +37,11 @@ chmod +x minister_install_ubuntu.20.04.sh
 ./minister_install_ubuntu.20.04.sh
 ```
 
-Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
+- Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
 
 
-You can access your stalker portal at: http://ipadres/stalker_portal
-The username and password to login to the portal are your default
+
+You can access your stalker portal at: http://ipadres/stalker_portalThe username and password to login to the portal are your default
 ```
 Login: admin
 pass: 1
