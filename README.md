@@ -36,3 +36,5 @@ The installation itself is as follows:
 chmod +x minister_install_ubuntu.20.04.sh
 ./minister_install_ubuntu.20.04.sh
 ```
+
+Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
