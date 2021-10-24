@@ -20,14 +20,14 @@ cd ministra-install-ubuntu-20.04/
 
 Open minister_install_ubuntu.20.04.sh with your favorite text editor and change to line 17
 ```bas
-mysql_root_pass = "test123456"
+mysql_root_pass="test123456"
 ```
 - This is the root password for MySQL that will be set during the installation, you can change it with yours if you wish.
 
 
 And on line 14 change
 ```bas
-TIME_ZONE = "Europe / Sofia"
+TIME_ZONE="Europe/Sofia"
 ```
 - This is the time zone that will be set during the installation, you can change it with yours if you wish
 
