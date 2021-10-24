@@ -33,8 +33,8 @@ TIME_ZONE="Europe/Sofia"
 
 The installation itself is as follows:
 ```bas
-chmod +x minister_install_ubuntu.20.04.sh
-./minister_install_ubuntu.20.04.sh
+chmod +x ministra_install_ubuntu.20.04.sh
+./ministra_install_ubuntu.20.04.sh
 ```
 
 - Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
