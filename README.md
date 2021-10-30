@@ -19,20 +19,20 @@ cd ministra-install-ubuntu-20.04/
 ```
 
 Open minister_install_ubuntu.20.04.sh with your favorite text editor and change on line 17
-```bas
+```bash
 mysql_root_pass="test123456"
 ```
 - This is the root password for MySQL that will be set during the installation, you can change it with yours if you wish.
 
 
 And on line 14 change
-```bas
+```bash
 TIME_ZONE="Europe/Sofia"
 ```
 - This is the time zone that will be set during the installation, you can change it with yours if you wish
 
 The installation itself is as follows:
-```bas
+```bash
 chmod +x ministra_install_ubuntu.20.04.sh
 ./ministra_install_ubuntu.20.04.sh
 ```
@@ -45,6 +45,13 @@ You can access your stalker portal at: http://ipadres/stalker_portal The usernam
 ```
 Login: admin
 pass: 1
+```
+
+Remove all channels from the database through the terminal
+```bash
+mysql -u root -p stalker_db
+truncate ch_links;
+truncate itv;
 ```
 
 ## Video
