@@ -4,7 +4,7 @@ Ministra Portal auto install script
 [![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA) - You can make one-time donations via PayPal.
 
 ##### Runs on
-[![Ubuntu](https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png)](https://www.ubuntu.com)
+[![Ubuntu](https://user-images.githubusercontent.com/12951085/139538206-833d8d33-0d1b-4d51-8ec8-86e5cf14f82e.png)](https://www.ubuntu.com)
 
 This script work only on Clean Ubuntu 20.04
 
