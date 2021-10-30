@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Updateing system . . . "
+echo "Updateing system"
 sleep 2
 apt-get update -y
 apt-get upgrade -y
@@ -31,7 +31,7 @@ function setLocale {
 
 # TWEAK SYSTEM VALUES
 function tweakSystem {
-	echo -ne "Tweaking system..."
+	echo -ne "Tweaking system"
 	echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 	echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 	echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
@@ -51,7 +51,7 @@ sleep 3
 add-apt-repository ppa:ondrej/php -y
 
 
-echo "Installing libs . . ."
+echo "Installing libs"
 sleep 3
 apt-get install nginx nginx-extras -y 
 /etc/init.d/nginx stop
@@ -65,13 +65,12 @@ update-alternatives --set php /usr/bin/php7.0
 
 sleep 2
 
-echo "Installing phing . . ."
+echo "Installing phing"
 sleep 3
 pear channel-discover pear.phing.info
-#pear install -Z phing/phing
 pear install --alldeps phing/phing-2.15.2
 
-echo "installing npm 2.15.11 . . . "
+echo "installing npm 2.15.11"
 sleep 3
 # Install NPM  2.15.11
 apt-get install npm -y
@@ -79,13 +78,13 @@ npm config set strict-ssl false
 npm install -g npm@2.15.11
 ln -s /usr/bin/nodejs /usr/bin/node
 
-echo "Configure timezone . . . "
+echo "Configure timezone"
 sleep 3
 echo "$TIME_ZONE" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
 
-echo "Installing mysql server . . . "
+echo "Installing mysql server"
 sleep 3
 export DEBIAN_FRONTEND="noninteractive"
 echo "mysql-server mysql-server/root_password password $mysql_root_pass" | sudo debconf-set-selections
@@ -104,7 +103,7 @@ echo 'sql_mode=""' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 echo 'default_authentication_plugin=mysql_native_password' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart
 
-echo "Installing " $PRODUCT $VER " . . . "
+echo "Installing " $PRODUCT $VER " . . "
 sleep 3
 cd /var/www/html/
 wget $repo/ministra-$VER.zip
@@ -157,7 +156,7 @@ sudo phing
 sleep 1
 
 echo ""
-echo "-----------------------------------------------------------------------"
+echo "-------------------------------------------------------------------"
 echo ""
 echo " Install Complete !"
 echo ""
@@ -176,5 +175,11 @@ echo " update administrators set pass=MD5('new_password_here') where login='admi
 echo " quit;"
 echo " Logout from web panel and Login with new password."
 echo ""
-echo "-----------------------------------------------------------------------"
+echo " Remove all channels from the database through the terminal."
+echo " mysql -u root -p stalker_db"
+echo " truncate ch_links;"
+echo " truncate itv;"
+echo " quit;"
+echo ""
+echo "--------------------------------------------------------------------"
 echo ""
