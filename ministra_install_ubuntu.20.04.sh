@@ -10,8 +10,8 @@ VER="5.6.5"
 PRODUCT="Ministra Portal"
 PORTAL_WAN="http://`wget -qO- http://ipecho.net/plain | xargs echo`/stalker_portal"
 PORTAL_LAN="http://`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`/stalker_portal"
-SUPPORTED="Ubuntu 20.04 LTS Server"
-TIME_ZONE="Europe/Sofia" #
+SUPPORTED="Ubuntu 20.04 LTS"
+TIME_ZONE="Europe/Amsterdam" #
 
 
 mysql_root_pass="test123456"
