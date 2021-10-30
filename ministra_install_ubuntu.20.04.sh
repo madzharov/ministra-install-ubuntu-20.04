@@ -51,7 +51,7 @@ sleep 3
 add-apt-repository ppa:ondrej/php -y
 
 
-echo "Installing libs"
+echo "Install required packages"
 sleep 3
 apt-get install nginx nginx-extras -y 
 /etc/init.d/nginx stop
@@ -78,7 +78,7 @@ npm config set strict-ssl false
 npm install -g npm@2.15.11
 ln -s /usr/bin/nodejs /usr/bin/node
 
-echo "Configure timezone"
+echo "Set the Server Timezone to EDT"
 sleep 3
 echo "$TIME_ZONE" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
