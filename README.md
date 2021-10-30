@@ -22,22 +22,21 @@ Open minister_install_ubuntu.20.04.sh with your favorite text editor and change 
 ```bash
 mysql_root_pass="test123456"
 ```
-- This is the root password for MySQL that will be set during the installation, you can change it with yours if you wish.
+This is the root password for MySQL that will be set during the installation, you can change it with yours if you wish.
 
 
 And on line 14 change
 ```bash
-TIME_ZONE="Europe/Sofia"
+TIME_ZONE="Europe/Amsterdam"
 ```
-- This is the time zone that will be set during the installation, you can change it with yours if you wish
+This is the time zone that will be set during the installation, you can change it with yours if you wish
 
 The installation itself is as follows:
 ```bash
 chmod +x ministra_install_ubuntu.20.04.sh
 ./ministra_install_ubuntu.20.04.sh
 ```
-
-- Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
+Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 17
 
 
 
