@@ -1,7 +1,7 @@
 # ministra-install-ubuntu-20.04
 Ministra Portal auto install script
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee: Thanks! :heart:
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA) - You can make one-time donations via PayPal.
 
 ##### Runs on
 [![Ubuntu](https://user-images.githubusercontent.com/12951085/139525842-ce8999f2-bae2-4306-94a8-fac83aba7e41.png)](https://www.ubuntu.com)
@@ -52,5 +52,4 @@ pass: 1
 [![Click to Watch](https://img.youtube.com/vi/6b2vlc-jPPQ/hq720.jpg)](https://www.youtube.com/watch?v=6b2vlc-jPPQ "Click to Watch")
 
 
-[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA) - You can make one-time donations via PayPal. I'll probably buy a coffe. :coffee: Thanks! :heart:
-
+[![Donate](https://img.shields.io/badge/Donate-PayPal-blue.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA) - You can make one-time donations via PayPal.
