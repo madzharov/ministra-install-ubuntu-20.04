@@ -71,9 +71,9 @@ pear channel-discover pear.phing.info
 #pear install -Z phing/phing
 pear install --alldeps phing/phing-2.15.2
 
-echo "installing npm 2.5.11 . . . "
+echo "installing npm 2.15.11 . . . "
 sleep 3
-# Install NPM  2.5.11
+# Install NPM  2.15.11
 apt-get install npm -y
 npm config set strict-ssl false
 npm install -g npm@2.15.11
