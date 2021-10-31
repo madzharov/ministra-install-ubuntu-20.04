@@ -46,7 +46,7 @@ Login: admin
 pass: 1
 ```
 
-Remove all channels from the database through the terminal
+Remove all test channels from the database through the terminal
 ```bash
 mysql -u root -p stalker_db
 truncate ch_links;
