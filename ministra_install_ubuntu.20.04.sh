@@ -175,7 +175,7 @@ echo " update administrators set pass=MD5('new_password_here') where login='admi
 echo " quit;"
 echo " Logout from web panel and Login with new password."
 echo ""
-echo " Remove all channels from the database through the terminal:"
+echo " Remove all test channels from the database through the terminal:"
 echo " mysql -u root -p stalker_db"
 echo " truncate ch_links;"
 echo " truncate itv;"
