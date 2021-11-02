@@ -1,37 +1,27 @@
 #!/bin/bash
 
-echo "Updateing system"
+echo -e " \e[32mUpdateing system\e[0m"
 sleep 2
 apt-get update -y
 apt-get upgrade -y
-apt-get install net-tools -y
+apt-get install net-tools -y 
 
-VER="5.6.5"
-PRODUCT="Ministra Portal"
-PORTAL_WAN="http://`wget -qO- http://ipecho.net/plain | xargs echo`/stalker_portal"
-PORTAL_LAN="http://`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`/stalker_portal"
-SUPPORTED="Ubuntu 20.04 LTS"
+VERSION="5.6.5"
 TIME_ZONE="Europe/Amsterdam" #
-
-
-mysql_root_pass="test123456"
-repo="http://vancho.xyz/stalker"
-
-
-
-
+mysql_root_password="test123456"
+repository="http://vancho.xyz/stalker"
 
 # SET LOCALE TO UTF-8
 function setLocale {
-	echo "Setting locales..."
+	echo -e " \e[32mSetting locales\e[0m"
 	locale-gen en_US.UTF-8  >> /dev/null 2>&1
 	export LANG="en_US.UTF-8" >> /dev/null 2>&1
-	echo "Done."
+	echo -e " \e[32mDone.\e[0m"
 }
 
 # TWEAK SYSTEM VALUES
 function tweakSystem {
-	echo -ne "Tweaking system"
+	echo -ne "\e[32mTweaking system"
 	echo "net.ipv6.conf.all.disable_ipv6 = 1" >> /etc/sysctl.conf
 	echo "net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
 	echo "net.ipv6.conf.lo.disable_ipv6 = 1" >> /etc/sysctl.conf
@@ -40,7 +30,7 @@ function tweakSystem {
 	echo "kernel.core_pattern = /var/crash/core-%e-%s-%u-%g-%p-%t" >> /etc/sysctl.conf
 	echo "fs.suid_dumpable = 2" >> /etc/sysctl.conf
 	sysctl -p >> /dev/null 2>&1
-	echo "Done."
+	echo -e " \e[32mDone.\e[0m"
 }
 
 setLocale;
@@ -50,8 +40,7 @@ sleep 3
 
 add-apt-repository ppa:ondrej/php -y
 
-
-echo "Install required packages"
+echo -e " \e[32mInstall required packages\e[0m"
 sleep 3
 apt-get install nginx nginx-extras -y 
 /etc/init.d/nginx stop
@@ -65,12 +54,12 @@ update-alternatives --set php /usr/bin/php7.0
 
 sleep 2
 
-echo "Installing phing"
+echo -e " \e[32mInstalling phing\e[0m"
 sleep 3
 pear channel-discover pear.phing.info
 pear install --alldeps phing/phing-2.15.2
 
-echo "installing npm 2.15.11"
+echo -e " \e[32minstalling npm 2.15.11\e[0m"
 sleep 3
 # Install NPM  2.15.11
 apt-get install npm -y
@@ -78,24 +67,24 @@ npm config set strict-ssl false
 npm install -g npm@2.15.11
 ln -s /usr/bin/nodejs /usr/bin/node
 
-echo "Set the Server Timezone to EDT"
+echo -e " \e[32mSet the Server Timezone to EDT\e[0m"
 sleep 3
 echo "$TIME_ZONE" > /etc/timezone
 dpkg-reconfigure -f noninteractive tzdata
 
 
-echo "Installing mysql server"
+echo -e " \e[32mInstalling mysql server\e[0m"
 sleep 3
 export DEBIAN_FRONTEND="noninteractive"
-echo "mysql-server mysql-server/root_password password $mysql_root_pass" | sudo debconf-set-selections
-echo "mysql-server mysql-server/root_password_again password $mysql_root_pass" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password password $mysql_root_password" | sudo debconf-set-selections
+echo "mysql-server mysql-server/root_password_again password $mysql_root_password" | sudo debconf-set-selections
 apt-get install -y mysql-server
 sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/my.cnf
-mysql -uroot -p$mysql_root_pass -e "USE mysql; UPDATE user SET Host='%' WHERE User='root' AND Host='localhost'; DELETE FROM user WHERE Host != '%' AND User='root'; FLUSH PRIVILEGES;"
-mysql -uroot -p$mysql_root_pass -e "create database stalker_db;"
-mysql -uroot -p$mysql_root_pass -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '"$mysql_root_pass"';"
-mysql -uroot -p$mysql_root_pass -e "CREATE USER stalker IDENTIFIED BY '1';"
-mysql -uroot -p$mysql_root_pass -e "GRANT ALL ON *.* TO stalker WITH GRANT OPTION;"
+mysql -uroot -p$mysql_root_password -e "USE mysql; UPDATE user SET Host='%' WHERE User='root' AND Host='localhost'; DELETE FROM user WHERE Host != '%' AND User='root'; FLUSH PRIVILEGES;"
+mysql -uroot -p$mysql_root_password -e "create database stalker_db;"
+mysql -uroot -p$mysql_root_password -e "ALTER USER root IDENTIFIED WITH mysql_native_password BY '"$mysql_root_password"';"
+mysql -uroot -p$mysql_root_password -e "CREATE USER stalker IDENTIFIED BY '1';"
+mysql -uroot -p$mysql_root_password -e "GRANT ALL ON *.* TO stalker WITH GRANT OPTION;"
 mysql -ustalker -p1 -e "ALTER USER stalker IDENTIFIED WITH mysql_native_password BY '1';"
 
 
@@ -103,11 +92,11 @@ echo 'sql_mode=""' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 echo 'default_authentication_plugin=mysql_native_password' >> /etc/mysql/mysql.conf.d/mysqld.cnf
 service mysql restart
 
-echo "Installing " $PRODUCT $VER " . . "
+echo -e " \e[32mInstalling Ministra Portal $VERSION \e[0m"
 sleep 3
 cd /var/www/html/
-wget $repo/ministra-$VER.zip
-unzip ministra-$VER.zip
+wget $repository/ministra-$VERSION.zip
+unzip ministra-$VERSION.zip
 rm -rf *.zip
 
 
@@ -120,19 +109,19 @@ apt-get purge libapache2-mod-php5filter > /dev/null
 
 cd /etc/apache2/sites-enabled/
 rm -rf *
-wget $repo/000-default.conf
+wget $repository/000-default.conf
 cd /etc/apache2/
 rm -rf ports.conf
-wget $repo/ports.conf
+wget $repository/ports.conf
 cd /etc/nginx/sites-available/
 rm -rf default
-wget $repo/default
+wget $repository/default
 /etc/init.d/apache2 restart
 /etc/init.d/nginx restart
 sleep 1
 rm -rf /var/www/html/stalker_portal/admin/vendor
 cd /var/www/html/stalker_portal/admin
-wget $repo/vendor.tar
+wget $repository/vendor.tar
 tar -xvf vendor.tar
 sleep 1
 
@@ -143,11 +132,11 @@ chmod 777 /var/www/.npm
 
 #Patch Composer
 cd /var/www/html/stalker_portal
-wget $repo/composer_version_1.9.1.patch
+wget $repository/composer_version_1.9.1.patch
 patch -p1 < composer_version_1.9.1.patch
 
 cd /var/www/html/stalker_portal/server
-wget -O custom.ini $repo/custom.ini
+wget -O custom.ini $repository/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
@@ -155,31 +144,27 @@ sed -i 's/php-gettext/php7.0-gettext/g' build.xml
 sudo phing
 sleep 1
 
+echo -e " \e[32m-------------------------------------------------------------------"
+echo -e " \e[0mInstall Complete !"
 echo ""
-echo "-------------------------------------------------------------------"
+echo -e " \e[0mDefault username is: \e[32madmin"
+echo -e " \e[0mDefault password is: \e[32m1"
 echo ""
-echo " Install Complete !"
+echo -e " \e[0mPORTAL WAN : \e[32mhttp://`wget -qO- http://ipecho.net/plain | xargs echo`/stalker_portal"
+echo -e " \e[0mPORTAL LAN : \e[32mhttp://`ifconfig | sed -En 's/127.0.0.1//;s/.*inet (addr:)?(([0-9]*\.){3}[0-9]*).*/\2/p'`/stalker_portal"
+echo -e " \e[0mMysql User : \e[32mroot"
+echo -e " \e[0mMySQL Pass : \e[32m$mysql_root_password"
 echo ""
-echo " Default username is: admin"
-echo " Default password is: 1"
+echo -e " \e[0mChange admin panel password through the terminal :"
+echo -e " \e[32mmysql -u root -p"
+echo -e " \e[32muse stalker_db;"
+echo -e " \e[32mupdate administrators set pass=MD5('new_password_here') where login='admin';"
+echo -e " \e[32mquit;"
+echo -e " \e[0mLogout from web panel and Login with new password."
 echo ""
-echo " PORTAL WAN : $PORTAL_WAN"
-echo " PORTAL LAN : $PORTAL_LAN"
-echo " Mysql User : root"
-echo " MySQL Pass : $mysql_root_pass"
-echo ""
-echo " Change admin panel password :"
-echo " mysql -u root -p"
-echo " use stalker_db;"
-echo " update administrators set pass=MD5('new_password_here') where login='admin';"
-echo " quit;"
-echo " Logout from web panel and Login with new password."
-echo ""
-echo " Remove all test channels from the database through the terminal:"
-echo " mysql -u root -p stalker_db"
-echo " truncate ch_links;"
-echo " truncate itv;"
-echo " quit;"
-echo ""
-echo "--------------------------------------------------------------------"
-echo ""
+echo -e " \e[0mRemove all test channels from the database through the terminal :"
+echo -e " \e[32mmysql -u root -p stalker_db"
+echo -e " \e[32mtruncate ch_links;"
+echo -e " \e[32mtruncate itv;"
+echo -e " \e[32mquit;"
+echo -e " \e[32m--------------------------------------------------------------------\e[0m"
