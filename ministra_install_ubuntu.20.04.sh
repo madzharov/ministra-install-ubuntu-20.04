@@ -6,7 +6,7 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install net-tools -y 
 
-VERSION="5.6.5"
+VERSION="5.6.8"
 TIME_ZONE="Europe/Amsterdam" #
 mysql_root_password="test123456"
 repository="http://vancho.xyz/stalker"
@@ -129,11 +129,6 @@ sleep 1
 # Fix Smart Launcher Applications
 mkdir /var/www/.npm
 chmod 777 /var/www/.npm
-
-#Patch Composer
-cd /var/www/html/stalker_portal
-wget $repository/composer_version_1.9.1.patch
-patch -p1 < composer_version_1.9.1.patch
 
 cd /var/www/html/stalker_portal/server
 wget -O custom.ini $repository/custom.ini
