@@ -69,7 +69,7 @@ ln -s /usr/bin/nodejs /usr/bin/node
 
 echo -e " \e[32mSet the Server Timezone to EDT\e[0m"
 sleep 3
-echo "$TIME_ZONE" > /etc/timezone
+timedatectl set-timezone $TIME_ZONE
 dpkg-reconfigure -f noninteractive tzdata
 
 
