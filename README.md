@@ -9,7 +9,7 @@ Ministra Portal auto install script
 This script work only on Clean Ubuntu 20.04 LTS
 
 Ministra auto install script
-  * Version of Ministra 5.6.5
+  * Version of Ministra 5.6.8
 
 ## Installation
 ```bash
