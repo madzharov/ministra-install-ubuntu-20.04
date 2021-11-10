@@ -49,7 +49,7 @@ apt-get install apache2 -y
 /etc/init.d/apache2 stop
 sleep 1
 
-apt-get -y install php7.0-geoip php7.0-intl php7.0-memcached php7.0-tidy php7.0-igbinary php7.0-msgpack php7.0-mcrypt php7.0-mbstring php7.0-zip memcached php7.0-memcache php7.0 php7.0-xml php7.0-gettext php7.0-soap php7.0-mysql php-pear nodejs libapache2-mod-php7.0 php7.0-curl php7.0-imagick php7.0-sqlite3 unzip
+apt-get -y install php7.0-geoip php7.0-intl php7.0-tidy php7.0-igbinary php7.0-msgpack php7.0-mcrypt php7.0-mbstring php7.0-zip memcached php7.0 php7.0-xml php7.0-gettext php7.0-soap php7.0-mysql php-pear nodejs libapache2-mod-php7.0 php7.0-curl php7.0-imagick php7.0-sqlite3 unzip
 update-alternatives --set php /usr/bin/php7.0
 
 sleep 2
