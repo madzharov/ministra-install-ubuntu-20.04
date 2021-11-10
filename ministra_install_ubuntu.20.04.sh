@@ -105,7 +105,7 @@ sed -i 's/short_open_tag = Off/short_open_tag = On/g' /etc/php/7.0/apache2/php.i
 ln -s /etc/php/7.0/mods-available/mcrypt.ini /etc/php/8.0/mods-available/
 phpenmod mcrypt
 a2enmod rewrite
-apt-get purge libapache2-mod-php5filter > /dev/null
+#apt-get purge libapache2-mod-php5filter > /dev/null
 
 
 cd /etc/apache2/sites-enabled/
@@ -138,7 +138,9 @@ cd
 cd /var/www/html/stalker_portal/deploy
 sed -i 's/apt-get -y install zlibc curl php5-sqlite php-soap php5-intl php-gettext php5-memcache php5-curl php5-mysql php5-mcrypt php5-tidy php5-imagick php5-geoip curl npm git zip unzip/apt-get -y install zlibc curl php7.0-sqlite php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip/' build.xml
 sed -i 's/apt-get -y install zlibc curl php-sqlite3 php-soap php-intl php-gettext php-memcache php-memcached php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm git zip unzip php-zip/apt-get -y install zlibc curl php7.0-sqlite3 php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-memcached php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip php7.0-zip/' build.xml
-sed -i 's|/etc/php5/|/etc/php/7.0/|' build.xml
+sed -i 's|/etc/php5/|/etc/php/7.0/|g' build.xml
+sed -i 's/php5enmod/phpenmod/g' build.xml
+sed -i 's/php5dismod/phpdismod/g' build.xml
 sudo phing
 sleep 1
 
