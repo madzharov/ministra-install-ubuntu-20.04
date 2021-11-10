@@ -136,7 +136,7 @@ wget -O custom.ini $repository/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/php-gettext/php7.0-gettext/g' build.xml
+sed -i 's/16.04/20.04/' build.xml
 sudo phing
 sleep 1
 
