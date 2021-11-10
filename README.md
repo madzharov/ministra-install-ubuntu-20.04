@@ -1,5 +1,5 @@
 # Ministra install on Ubuntu 20.04 LTS / 18.04 LTS
-Ministra Portal auto install script
+Ministra Portal auto install script on Ubuntu 20.04 LTS / 18.04 LTS
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA)  You can make one-time donations via PayPal.
 
