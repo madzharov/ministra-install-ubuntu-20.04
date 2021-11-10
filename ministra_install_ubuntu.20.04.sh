@@ -136,7 +136,7 @@ wget -O custom.ini $repository/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/16.04/20.04/' build.xml
+sed -i 's/apt-get -y install zlibc curl php5-sqlite php-soap php5-intl php-gettext php5-memcache php5-curl php5-mysql php5-mcrypt php5-tidy php5-imagick php5-geoip curl npm git zip unzip/apt-get -y install zlibc curl php7.0-sqlite php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip/g' build.xml
 sudo phing
 sleep 1
 
