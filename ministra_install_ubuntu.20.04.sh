@@ -65,7 +65,7 @@ sleep 3
 apt-get install npm -y
 npm config set strict-ssl false
 npm install -g npm@2.15.11
-#ln -s /usr/bin/nodejs /usr/bin/node
+ln -s /usr/bin/nodejs /usr/bin/node
 
 echo -e " \e[32mSet the Server Timezone to EDT\e[0m"
 sleep 3
@@ -102,7 +102,7 @@ rm -rf *.zip
 
 
 sed -i 's/short_open_tag = Off/short_open_tag = On/g' /etc/php/7.0/apache2/php.ini
-#ln -s /etc/php/7.0/mods-available/mcrypt.ini /etc/php/8.0/mods-available/
+ln -s /etc/php/7.0/mods-available/mcrypt.ini /etc/php/8.0/mods-available/
 phpenmod mcrypt
 a2enmod rewrite
 #apt-get purge libapache2-mod-php5filter > /dev/null
