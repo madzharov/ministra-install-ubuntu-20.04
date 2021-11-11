@@ -65,7 +65,7 @@ sleep 3
 apt-get install npm -y
 npm config set strict-ssl false
 npm install -g npm@2.15.11
-ln -s /usr/bin/nodejs /usr/bin/node
+# ln -s /usr/bin/nodejs /usr/bin/node
 
 echo -e " \e[32mSet the Server Timezone to EDT\e[0m"
 sleep 3
@@ -79,7 +79,7 @@ export DEBIAN_FRONTEND="noninteractive"
 echo "mysql-server mysql-server/root_password password $mysql_root_password" | sudo debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $mysql_root_password" | sudo debconf-set-selections
 apt-get install -y mysql-server
-#sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/my.cnf
+# sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/my.cnf
 sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/mysql.conf.d/mysqld.cnf
 mysql -uroot -p$mysql_root_password -e "USE mysql; UPDATE user SET Host='%' WHERE User='root' AND Host='localhost'; DELETE FROM user WHERE Host != '%' AND User='root'; FLUSH PRIVILEGES;"
 mysql -uroot -p$mysql_root_password -e "create database stalker_db;"
@@ -105,7 +105,7 @@ sed -i 's/short_open_tag = Off/short_open_tag = On/g' /etc/php/7.0/apache2/php.i
 ln -s /etc/php/7.0/mods-available/mcrypt.ini /etc/php/8.0/mods-available/
 phpenmod mcrypt
 a2enmod rewrite
-#apt-get purge libapache2-mod-php5filter > /dev/null
+# apt-get purge libapache2-mod-php5filter > /dev/null
 
 
 cd /etc/apache2/sites-enabled/
