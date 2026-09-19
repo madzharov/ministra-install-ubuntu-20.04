@@ -6,7 +6,7 @@ apt-get update -y
 apt-get upgrade -y
 apt-get install net-tools -y 
 
-VERSION="5.6.8"
+VERSION="5.6.10"
 TIME_ZONE="Europe/Amsterdam" #
 mysql_root_password="test123456"
 repository="https://raw.githubusercontent.com/madzharov/stalker/main"
