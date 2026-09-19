@@ -138,7 +138,7 @@ wget -O custom.ini $repository/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/apt-get -y install zlibc curl php-sqlite3 php-soap php-intl php-gettext php-memcache php-memcached php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm git zip unzip php-zip/apt-get -y install zlibc curl php7.0-sqlite3 php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-memcached php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip php7.0-zip/' build.xml
+sed -i 's/apt-get -y install zlib1g curl php-sqlite3 php-soap php-intl php-gettext php-memcache php-memcached php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm git zip unzip php-zip/apt-get -y install zlib1g curl php7.0-sqlite3 php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-memcached php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip php7.0-zip/' build.xml
 sed -i 's/php5enmod/phpenmod/g' build.xml
 sed -i 's/php5dismod/phpdismod/g' build.xml
 sudo phing
