@@ -38,7 +38,9 @@ tweakSystem;
 
 sleep 3
 
+apt install -y software-properties-common
 add-apt-repository ppa:ondrej/php -y
+apt update
 
 echo -e " \e[32mInstall required packages\e[0m"
 sleep 3
