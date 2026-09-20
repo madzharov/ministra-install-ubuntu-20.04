@@ -51,7 +51,7 @@ apt-get install apache2 -y
 /etc/init.d/apache2 stop
 sleep 1
 
-apt-get -y install php7.0-geoip php7.0-intl php7.0-tidy php7.0-igbinary php7.0-msgpack php7.0-mcrypt php7.0-mbstring php7.0-zip memcached php7.0-memcached php7.0 php7.0-xml php7.0-gettext php7.0-soap php7.0-mysql php-pear nodejs libapache2-mod-php7.0 php7.0-curl php7.0-imagick php7.0-sqlite3 unzip
+apt-get install php7.0-geoip php7.0-intl php7.0-tidy php7.0-igbinary php7.0-msgpack php7.0-mcrypt php7.0-mbstring php7.0-zip memcached php7.0-memcached php7.0 php7.0-xml php7.0-gettext php7.0-soap php7.0-mysql php-pear nodejs libapache2-mod-php7.0 php7.0-curl php7.0-imagick php7.0-sqlite3 unzip -y
 update-alternatives --set php /usr/bin/php7.0
 
 sleep 2
@@ -80,7 +80,7 @@ sleep 3
 export DEBIAN_FRONTEND="noninteractive"
 echo "mysql-server mysql-server/root_password password $mysql_root_password" | sudo debconf-set-selections
 echo "mysql-server mysql-server/root_password_again password $mysql_root_password" | sudo debconf-set-selections
-apt-get install -y mysql-server
+apt-get install mysql-server -y
 # sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/my.cnf
 sed -i 's/127\.0\.0\.1/0\.0\.0\.0/g' /etc/mysql/mysql.conf.d/mysqld.cnf
 mysql -uroot -p$mysql_root_password -e "USE mysql; UPDATE user SET Host='%' WHERE User='root' AND Host='localhost'; DELETE FROM user WHERE Host != '%' AND User='root'; FLUSH PRIVILEGES;"
@@ -138,7 +138,7 @@ wget -O custom.ini $repository/custom.ini
 cd
 
 cd /var/www/html/stalker_portal/deploy
-sed -i 's/apt-get -y install zlibc curl php-sqlite3 php-soap php-intl php-gettext php-memcache php-memcached php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm git zip unzip php-zip/apt-get -y install zlibc curl php7.0-sqlite3 php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-memcached php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip php7.0-zip/' build.xml
+sed -i 's/apt-get install -y zlibc curl php-sqlite3 php-soap php-intl php-gettext php-memcache php-memcached php-curl php-mysql php-mcrypt php-tidy php-imagick php-geoip curl npm git zip unzip php-zip/apt-get install -y zlibc curl php7.0-sqlite3 php-soap php7.0-intl php7.0-gettext php7.0-memcache php7.0-memcached php7.0-curl php7.0-mysql php7.0-mcrypt php7.0-tidy php7.0-imagick php7.0-geoip curl npm git zip unzip php7.0-zip/' build.xml
 sed -i 's/php5enmod/phpenmod/g' build.xml
 sed -i 's/php5dismod/phpdismod/g' build.xml
 sudo phing
