@@ -1,24 +1,24 @@
-# Ministra install on Ubuntu 20.04 LTS / 18.04 LTS
-Ministra Portal auto install script on Ubuntu 20.04 LTS / 18.04 LTS
+# Ministra install on Ubuntu 22.04 LTS
+Ministra Portal auto install script on Ubuntu 22.04 LTS
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA)  You can make one-time donations via PayPal.
 
 ##### Runs on
 [![Ubuntu](https://user-images.githubusercontent.com/12951085/139538206-833d8d33-0d1b-4d51-8ec8-86e5cf14f82e.png)](https://www.ubuntu.com)
 
-This script work only on Clean Ubuntu 20.04 LTS / 18.04 LTS
+This script work only on Clean Ubuntu 22.04 LTS
 
 Ministra auto install script
-  * Version of Ministra 5.6.8
+  * Version of Ministra 5.6.10
 
 ## Installation
 ```bash
 apt-get install git
-git clone https://github.com/madzharov/ministra-install-ubuntu-20.04.git
-cd ministra-install-ubuntu-20.04/
+git clone https://github.com/madzharov/ministra-install-ubuntu-22.04.git
+cd ministra-install-ubuntu-22.04/
 ```
 
-Open ministra_install_ubuntu.20.04.sh with your favorite text editor and change on line 11
+Open ministra_install_ubuntu.22.04.sh with your favorite text editor and change on line 11
 ```bash
 mysql_root_password="test123456"
 ```
@@ -33,8 +33,8 @@ This is the time zone that will be set during the installation, you can change i
 
 The installation itself is as follows:
 ```bash
-chmod +x ministra_install_ubuntu.20.04.sh
-./ministra_install_ubuntu.20.04.sh
+chmod +x ministra_install_ubuntu.22.04.sh
+./ministra_install_ubuntu.22.04.sh
 ```
 Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 11
 
