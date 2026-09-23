@@ -14,11 +14,11 @@ Ministra auto install script
 ## Installation
 ```bash
 apt-get install git
-git clone https://github.com/madzharov/ministra-install-ubuntu-20.04.git
-cd ministra-install-ubuntu-20.04/
+https://github.com/madzharov/ministra-install-ubuntu.git
+cd ministra-install-ubuntu/
 ```
 
-Open ministra_install_ubuntu.22.04.sh with your favorite text editor and change on line 11
+Open install.sh with your favorite text editor and change on line 11
 ```bash
 mysql_root_password="test123456"
 ```
@@ -33,8 +33,8 @@ This is the time zone that will be set during the installation, you can change i
 
 The installation itself is as follows:
 ```bash
-chmod +x ministra_install_ubuntu.22.04.sh
-./ministra_install_ubuntu.22.04.sh
+chmod +x install.sh
+./install.sh
 ```
 Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 11
 
