@@ -13,8 +13,8 @@ Ministra auto install script
 
 ## Installation
 ```bash
-apt-get install git
-https://github.com/madzharov/ministra-install-ubuntu.git
+apt install git
+git clone https://github.com/madzharov/ministra-install-ubuntu.git
 cd ministra-install-ubuntu/
 ```
 
