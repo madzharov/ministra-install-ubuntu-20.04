@@ -14,8 +14,8 @@ Ministra auto install script
 ## Installation
 ```bash
 apt-get install git
-git clone https://github.com/madzharov/ministra-install-ubuntu-22.04.git
-cd ministra-install-ubuntu-22.04/
+git clone https://github.com/madzharov/ministra-install-ubuntu-20.04.git
+cd ministra-install-ubuntu-20.04/
 ```
 
 Open ministra_install_ubuntu.22.04.sh with your favorite text editor and change on line 11
