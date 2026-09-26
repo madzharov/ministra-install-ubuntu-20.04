@@ -29,7 +29,7 @@ And on line 11 change
 ```bash
 stalkerpass="1"
 ```
-This is the admin password to log in to the web panel.
+This is the admin password to login to the web panel.
 
 And on line 12 change
 ```bash
@@ -42,7 +42,7 @@ The installation itself is as follows:
 chmod +x install.sh
 ./install.sh
 ```
-Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 11
+Accordingly, during the installation, when executing the last command, phing will ask you for the root password for MySQL, enter the password you set on line 10
 
 
 
