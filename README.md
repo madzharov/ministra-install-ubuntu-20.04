@@ -18,7 +18,7 @@ git clone https://github.com/madzharov/ministra-install-ubuntu.git
 cd ministra-install-ubuntu/
 ```
 
-Open ```#install.sh``` with your favorite text editor and change on line 10
+Open ```install.sh``` with your favorite text editor and change on line 10
 ```bash
 mysql_root_password="test123456"
 ```
