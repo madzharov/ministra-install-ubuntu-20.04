@@ -1,4 +1,4 @@
-# Ministra install on Ubuntu 22.04 LTS
+# Ministra install on Ubuntu 24.04 LTS / 22.04 LTS
 Ministra Portal auto install script on Ubuntu 22.04 LTS
 
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/donate?hosted_button_id=4H8VAGMLW5RMA)  You can make one-time donations via PayPal.
@@ -6,7 +6,7 @@ Ministra Portal auto install script on Ubuntu 22.04 LTS
 ##### Runs on
 [![Ubuntu](https://user-images.githubusercontent.com/12951085/139538206-833d8d33-0d1b-4d51-8ec8-86e5cf14f82e.png)](https://www.ubuntu.com)
 
-This script work only on Clean Ubuntu 22.04 LTS
+This script work only on Clean Ubuntu 24.04 LTS / 22.04 LTS
 
 Ministra auto install script
   * Version of Ministra 5.6.10
@@ -18,14 +18,20 @@ git clone https://github.com/madzharov/ministra-install-ubuntu.git
 cd ministra-install-ubuntu/
 ```
 
-Open install.sh with your favorite text editor and change on line 11
+Open install.sh with your favorite text editor and change on line 10
 ```bash
 mysql_root_password="test123456"
 ```
 This is the root password for MySQL that will be set during the installation, you can change it with yours if you wish.
 
 
-And on line 10 change
+And on line 11 change
+```bash
+stalkerpass="1"
+```
+This is the admin password to log in to the web panel.
+
+And on line 12 change
 ```bash
 TIME_ZONE="Europe/Amsterdam"
 ```
