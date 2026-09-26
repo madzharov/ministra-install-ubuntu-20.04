@@ -7,9 +7,9 @@ apt-get update
 apt-get upgrade -y
 
 VERSION="5.6.10"
-TIME_ZONE="Europe/Amsterdam"
 mysql_root_password="test123456"
 stalkerpass="1"
+TIME_ZONE="Europe/Amsterdam"
 repository="https://raw.githubusercontent.com/madzharov/stalker/main"
 
 echo -e " \e[32mInstalling Initial Packages...\e[0m"
